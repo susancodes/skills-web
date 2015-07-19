@@ -1,0 +1,43 @@
+/* style.css */
+
+/* APPLICATION FORMS PAGE */
+input {
+	background-color: yellow;
+}
+
+/*#lastname {
+	font-weight: bold;
+}*/
+
+name="lastname" {
+	font-weight: bold;
+}
+
+#instructions {
+	border: 2px solid #990033 ;
+}
+
+
+
+/* APPLICATION THANK YOU PAGE */
+
+.thankyou {
+	font-family: sans-serif;
+}
+
+.applicationinfo {
+	font-family: sans-serif;
+	color: #990033;
+}
+
+#processtime {
+	font-style: italic;
+	font-size: 10px;
+}
+
+/*BOTH PAGES */
+
+* {
+	background-color: #009933;
+
+}
