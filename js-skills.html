@@ -530,7 +530,15 @@ kittenPhoto.on('dblclick', changeToPuppy);
 <p>You must calculate the prime numbers; you cannot just type them in.</p>
 
 <fieldset>
-  <div id="prime-box-area"><!-- Your prime boxes should appear here! --></div>
+  <div id="prime-box-area"><!-- Your prime boxes should appear here! -->
+
+  <div class="prime-box" style="background-color: crimson"></div>
+  <div class="prime-box" style="background-color: cornflowerblue"></div>
+  <div class="prime-box" style="background-color: gold"></div>
+  <div class="prime-box" style="background-color: aquamarine"></div>
+  <div class="prime-box" style="background-color: hotpink"></div>
+
+  </div>
   <input type="button" id="make-prime-boxes" value="Button">
 </fieldset>
 
@@ -538,6 +546,35 @@ kittenPhoto.on('dblclick', changeToPuppy);
     var PRIME_COLORS = ['orange', 'midnightblue', 'darkgoldenrod', 'green', 'purple'];
 
   // put the rest of your code here
+  primeNumList = []
+   function listPrimeNums() {
+    for (var i = 2; primeNumList.length < 5; i++) {
+      if (i % 2 !== 0) {
+        if (i % 3 !== 0) {
+          if (i % 5 !== 0) {
+            if (i % 7 !== 0) {
+              if (i % 11 !== 0) {
+                primeNumList.push(i);
+              }
+            }
+          }
+        }
+      }
+    console.log(primeNumList);
+    }
+$("fieldset > div > div:nth-of-type(1)").html([primeNumList[0]]);
+$("fieldset > div > div:nth-of-type(1)").html();
+$("fieldset > div > div:nth-of-type(2)").html([primeNumList[1]]);
+$("fieldset > div > div:nth-of-type(2)").html();
+$("fieldset > div > div:nth-of-type(3)").html([primeNumList[2]]);
+$("fieldset > div > div:nth-of-type(3)").html();
+$("fieldset > div > div:nth-of-type(4)").html([primeNumList[3]]);
+$("fieldset > div > div:nth-of-type(4)").html();
+$("fieldset > div > div:nth-of-type(5)").html([primeNumList[4]]);
+$("fieldset > div > div:nth-of-type(5)").html();
+   }
+
+  $("#make-prime-boxes").on('click', listPrimeNums)
 </script>
 
 
