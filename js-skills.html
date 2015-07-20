@@ -364,9 +364,9 @@ kittenPhoto.on('dblclick', changeToPuppy);
     $("#agreeable-text").html("I like " + $('#favorite-food-input').val() + ", too!");
     $("#agreeable-text").html();
 
-  }
+  };
 
-  $('input:submit').on('click', agreeableText);
+  $('input:submit:last').on('click', agreeableText);
 
 </script>
 
@@ -414,6 +414,23 @@ kittenPhoto.on('dblclick', changeToPuppy);
 
 <script>
   // put your code here
+  var randomGameNumber = Math.floor((Math.random() * 100) + 1);
+  function guessNumberGame() {
+    var guess = parseInt(prompt("Enter a guess: "));
+    while (guess !== randomGameNumber) {
+      if (guess > randomGameNumber) {
+        guess = parseInt(prompt("Too high. Guess again: "));
+      } else {
+        guess = parseInt(prompt("Too low. Guess again: "));
+      } 
+    if (guess === randomGameNumber) {
+        alert("You're right! Way to go! Press Play to play another round!");
+      }
+    }
+  }
+
+  $("#play-guessing-game").on('click', guessNumberGame)
+
 </script>
 
 <div class="hint">
@@ -454,6 +471,36 @@ kittenPhoto.on('dblclick', changeToPuppy);
 
 <script>
   // put your code here
+  var randomGameNumber2
+  function guessNumberGame2() {
+    $('#number-guessed').prop('disabled', false);
+    $('#try-this-number').prop('disabled', false);
+    $('#play-guessing-game-2').prop('disabled', true);
+    randomGameNumber2 = Math.floor((Math.random() * 100) + 1);
+    return randomGameNumber2;
+}
+
+  function numberHighLow(evt) {
+    evt.preventDefault();
+    var guess2 = $('#number-guessed').val();
+      if (guess2 > randomGameNumber2) {
+          $("#number-guessing-msg").html("Too high. Try again.");
+          $("#number-guessing-msg").html();
+      } else if (guess2 < randomGameNumber2) {
+          $("#number-guessing-msg").html("Too low. Try again.");
+          $("#number-guessing-msg").html();
+      } else {
+          $("#number-guessing-msg").html("YOU'RE RIGHT! WAY TO GO!");
+          $("#number-guessing-msg").html();
+          $('#number-guessed').prop('disabled', true);
+          $('#try-this-number').prop('disabled', true);
+          $('#play-guessing-game-2').prop('disabled', false);
+      }
+    }
+
+  $('#play-guessing-game-2').on('click', guessNumberGame2)
+  $('#try-this-number').on('click', numberHighLow)
+
 </script>
 
 
